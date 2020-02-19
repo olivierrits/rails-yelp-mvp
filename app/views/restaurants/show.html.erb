@@ -18,6 +18,21 @@
   </tr>
 </table>
 
+<hr>
+
+<% @restaurant.reviews.each do |review| %>
+  <table>
+    <tr>
+      <td><%= "*" * review.rating %> </td>
+      <td><%= review.content %></td>
+    </tr>
+  </table>
+<% end %>
+
+<hr>
+
+<%= link_to "Add a review", new_restaurant_review_path(@restaurant)  %>
+
 <div id="footer">
   <p btn-menu><%= link_to "Back to overview", restaurants_path %></p>
 </div>
